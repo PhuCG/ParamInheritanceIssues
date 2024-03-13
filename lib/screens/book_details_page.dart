@@ -16,17 +16,18 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
+      body: Center(
         child: Card(
-          margin: const EdgeInsets.all(48),
+          margin: const EdgeInsets.all(56),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Id: ${widget.id}'),
+              Text('id: ${widget.id}'),
+              Text('args: ${context.routeData.args}'),
               TextButton(
                 onPressed: () {
-                  context.router.push(ReviewRoute());
+                  context.navigateTo(ReviewRoute());
                 },
                 child: const Text('Push to Review'),
               ),

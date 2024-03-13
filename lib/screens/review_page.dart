@@ -9,8 +9,10 @@ class ReviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('id: $id '),
+    return Scaffold(
+      body: Center(
+        child: Text('id: $id'),
+      ),
     );
   }
 }

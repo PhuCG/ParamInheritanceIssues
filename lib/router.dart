@@ -5,11 +5,15 @@ import 'package:inherited_params_issues/router.gr.dart';
 class RootRouter extends $RootRouter {
   @override
   final List<AutoRoute> routes = [
+    AutoRoute(path: '/', page: HomeRoute.page),
     AutoRoute(
-      path: '/',
-      page: BookListRoute.page,
-      initial: true,
+      page: BooksTab.page,
       children: [
+        RedirectRoute(path: '', redirectTo: 'books'),
+        AutoRoute(
+          path: 'books',
+          page: BookListRoute.page,
+        ),
         AutoRoute(
           path: 'book/:id',
           page: BookDetailsRoute.page,
@@ -18,6 +22,12 @@ class RootRouter extends $RootRouter {
           ],
         ),
       ],
-    )
+      title: (ctx, _) => 'Books list',
+    ),
   ];
+}
+
+@RoutePage(name: 'BooksTab')
+class BooksTabPage extends AutoRouter {
+  const BooksTabPage({super.key});
 }
