@@ -26,13 +26,19 @@ class _BookListScreenState extends State<BookListScreen> {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushRoute(BookDetailsRoute(id: 1));
+                context.pushRoute(BookDetailsRoute(
+                  id: 1,
+                  children: [ReviewRoute()],
+                ));
               },
               child: const Text('Book id: 1'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushRoute(BookDetailsRoute(id: 2));
+                context.pushRoute(BookDetailsRoute(
+                  id: 2,
+                  children: [ReviewRoute()],
+                ));
               },
               child: const Text('Book id: 2'),
             ),

@@ -17,22 +17,34 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Card(
-          margin: const EdgeInsets.all(56),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('id: ${widget.id}'),
-              Text('args: ${context.routeData.args}'),
-              TextButton(
-                onPressed: () {
-                  context.pushRoute(ReviewRoute());
-                },
-                child: const Text('Push to Review'),
+        child: Column(
+          children: [
+            Card(
+              margin: const EdgeInsets.all(56),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('id: ${widget.id}'),
+                  Text('args: ${context.routeData.args}'),
+                  TextButton(
+                    onPressed: () {
+                      context.navigateTo(ReviewRoute());
+                    },
+                    child: const Text('Push to Review'),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+            const Expanded(
+              child: Column(
+                children: [
+                  Text('data'),
+                  AutoRouter(),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

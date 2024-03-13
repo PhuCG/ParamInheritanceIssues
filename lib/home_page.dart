@@ -15,11 +15,22 @@ class HomeScreen extends StatelessWidget {
         titleTextStyle: Theme.of(context).textTheme.headlineLarge,
       ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text('List Book'),
-          onPressed: () {
-            context.pushRoute(const BooksTab());
-          },
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: const Text('List Book'),
+              onPressed: () {
+                context.pushRoute(const BooksTab());
+              },
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              child: const Text('Dashboard'),
+              onPressed: () {
+                context.pushRoute(const DashboardRoute());
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -7,6 +7,16 @@ class RootRouter extends $RootRouter {
   final List<AutoRoute> routes = [
     AutoRoute(path: '/', page: HomeRoute.page),
     AutoRoute(
+      path: '/dashboard',
+      page: DashboardRoute.page,
+      children: [
+        RedirectRoute(path: '', redirectTo: 'users'),
+        AutoRoute(path: 'users', page: UserRoute.page),
+        AutoRoute(path: 'posts', page: PostRoute.page),
+        AutoRoute(path: 'settings', page: SettingRoute.page),
+      ],
+    ),
+    AutoRoute(
       page: BooksTab.page,
       children: [
         RedirectRoute(path: '', redirectTo: 'books'),
