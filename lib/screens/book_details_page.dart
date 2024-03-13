@@ -27,7 +27,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
               Text('args: ${context.routeData.args}'),
               TextButton(
                 onPressed: () {
-                  context.navigateTo(ReviewRoute());
+                  context.pushRoute(ReviewRoute());
                 },
                 child: const Text('Push to Review'),
               ),
