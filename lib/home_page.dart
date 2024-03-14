@@ -44,7 +44,7 @@ class _HomestayScreenState extends State<HomestayScreen> {
                 context.pushRoute(const DeclarativeRoute());
               },
             ),
-            const SizedBox(height: 16),
+            const Divider(),
             ElevatedButton(
               child: const Text('Tab Sceen'),
               onPressed: () {
@@ -55,6 +55,13 @@ class _HomestayScreenState extends State<HomestayScreen> {
               child: const Text('User Sceen One Page'),
               onPressed: () {
                 context.pushRoute(const UserRoute());
+              },
+            ),
+            const Divider(),
+            ElevatedButton(
+              child: const Text('Go to Home Right Screen'),
+              onPressed: () {
+                context.router.replaceAll([const RightTab()]);
               },
             ),
           ],

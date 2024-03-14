@@ -29,8 +29,16 @@ class _DashboardPageState extends State<DashboardPage> {
                   child: const Text('Post'),
                   onPressed: () => context.pushRoute(const PostRoute())),
               TextButton(
-                  child: const Text('Users'),
+                  child: const Text('Settings'),
                   onPressed: () => context.pushRoute(const SettingRoute())),
+              TextButton(
+                  child: const Text('innerRouterOf'),
+                  onPressed: () {
+                    final router = AutoRouter.of(context);
+                    final dashboard =
+                        router.innerRouterOf<StackRouter>(DashboardRoute.name);
+                    dashboard?.push(const UserRoute());
+                  }),
             ],
           ),
           const Expanded(
