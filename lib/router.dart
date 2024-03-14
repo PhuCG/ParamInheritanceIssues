@@ -22,6 +22,9 @@ class RootRouter extends $RootRouter {
       children: [
         AutoRoute(path: '', page: BookListRoute.page),
         AutoRoute(path: ':id', page: BookDetailsRoute.page),
+        AutoRoute(path: 'users', page: UserRoute.page),
+        AutoRoute(path: 'posts', page: PostRoute.page),
+        AutoRoute(path: 'settings', page: SettingRoute.page),
       ],
     ),
     AutoRoute(
