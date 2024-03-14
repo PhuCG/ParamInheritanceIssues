@@ -6,7 +6,7 @@ import 'package:inherited_params_issues/router.gr.dart';
 class BookDetailsPage extends StatefulWidget {
   final int id;
 
-  const BookDetailsPage({super.key, @pathParam required this.id});
+  const BookDetailsPage({super.key, @PathParam.inherit('id') required this.id});
 
   @override
   State<BookDetailsPage> createState() => _BookDetailsPageState();

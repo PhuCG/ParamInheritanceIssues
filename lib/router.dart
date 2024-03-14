@@ -46,24 +46,16 @@ class RootRouter extends $RootRouter {
     //   ],
     // ),
 
-    // AutoRoute(
-    //   page: BooksTab.page,
-    //   children: [
-    //     RedirectRoute(path: '', redirectTo: 'books'),
-    //     AutoRoute(
-    //       path: 'books',
-    //       page: BookListRoute.page,
-    //     ),
-    //     AutoRoute(
-    //       path: 'book/:id',
-    //       page: BookDetailsRoute.page,
-    //       children: [
-    //         AutoRoute(path: 'review', page: ReviewRoute.page),
-    //       ],
-    //     ),
-    //   ],
-    //   title: (ctx, _) => 'Books list',
-    // ),
+    AutoRoute(path: '/books', page: BookListRoute.page),
+    AutoRoute(
+      path: '/book/:id',
+      page: BookContainerRoute.page,
+      children: [
+        AutoRoute(path: 'detail', page: BookDetailsRoute.page, initial: true),
+        AutoRoute(path: 'review', page: ReviewRoute.page),
+      ],
+      title: (ctx, _) => 'Books list',
+    ),
 
     // // Right Screen
     // AutoRoute(path: '/', page: RightRoute.page),
@@ -80,23 +72,17 @@ class RootRouter extends $RootRouter {
     // ),
 
     // DeepLink
-
-    AutoRoute(
-      path: '/book/:id/code',
-      page: BookDetailsRoute.page,
-      fullMatch: true,
-    ),
-    AutoRoute(
-      path: '/book/:id',
-      page: BookDetails2Route.page,
-      // fullMatch: true,
-    ),
+    // AutoRoute(
+    //   path: '/book/:id/code',
+    //   page: BookDetailsRoute.page,
+    //   fullMatch: true,
+    // ),
+    // AutoRoute(
+    //   path: '/book/:id',
+    //   page: BookDetails2Route.page,
+    //   // fullMatch: true,
+    // ),
   ];
-}
-
-@RoutePage(name: 'BooksTab')
-class BooksTabPage extends AutoRouter {
-  const BooksTabPage({super.key});
 }
 
 @RoutePage(name: 'RightTab')

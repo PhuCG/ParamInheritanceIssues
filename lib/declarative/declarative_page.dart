@@ -35,7 +35,7 @@ class _DeclarativeScreenState extends State<DeclarativeScreen> {
               child: AutoRouter.declarative(
                 routes: (handler) => [
                   const BookListRoute(),
-                  if (id == 1) BookDetailsRoute(id: 1),
+                  // if (id == 1) BookDetailsRoute(),
                   if (id == 2) const UserRoute(),
                   if (id == 3) const SettingRoute(),
                   if (id == 4) const PostRoute(),

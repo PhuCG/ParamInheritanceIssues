@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:inherited_params_issues/router.gr.dart';
+import 'package:inherited_params_issues/screens/book_container_paga.dart';
 
 //ignore_for_file: public_member_api_docs
 @RoutePage()
@@ -27,18 +28,16 @@ class _BookListScreenState extends State<BookListScreen> {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushRoute(BookDetailsRoute(
+                context.pushRoute(BookContainerRoute(
                   id: 1,
-                  children: [ReviewRoute()],
                 ));
               },
               child: const Text('Book id: 1'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushRoute(BookDetailsRoute(
+                context.pushRoute(BookContainerRoute(
                   id: 2,
-                  children: [ReviewRoute()],
                 ));
               },
               child: const Text('Book id: 2'),

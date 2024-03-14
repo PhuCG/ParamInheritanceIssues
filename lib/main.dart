@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:inherited_params_issues/router.dart';
-import 'package:inherited_params_issues/router.gr.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,12 +17,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _rootRouter.config(
-        deepLinkBuilder: (deepLink) {
-          return const DeepLink.path(
-            '/book/1/code',
-            includePrefixMatches: false,
-          );
-        },
         navigatorObservers: () => [MyObserver()],
       ),
       theme: ThemeData.dark().copyWith(
