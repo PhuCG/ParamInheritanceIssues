@@ -8,26 +8,28 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:flutter/material.dart' as _i11;
+import 'package:auto_route/auto_route.dart' as _i11;
+import 'package:flutter/material.dart' as _i12;
 import 'package:inherited_params_issues/dashboard/dashboard_page.dart' as _i4;
-import 'package:inherited_params_issues/dashboard/post_page.dart' as _i6;
-import 'package:inherited_params_issues/dashboard/setting_page.dart' as _i8;
-import 'package:inherited_params_issues/dashboard/user_page.dart' as _i9;
-import 'package:inherited_params_issues/home_page.dart' as _i5;
+import 'package:inherited_params_issues/dashboard/post_page.dart' as _i7;
+import 'package:inherited_params_issues/dashboard/setting_page.dart' as _i9;
+import 'package:inherited_params_issues/dashboard/user_page.dart' as _i10;
+import 'package:inherited_params_issues/declarative/declarative_page.dart'
+    as _i5;
+import 'package:inherited_params_issues/home_page.dart' as _i6;
 import 'package:inherited_params_issues/router.dart' as _i3;
 import 'package:inherited_params_issues/screens/book_details_page.dart' as _i1;
 import 'package:inherited_params_issues/screens/book_list_page.dart' as _i2;
-import 'package:inherited_params_issues/screens/review_page.dart' as _i7;
+import 'package:inherited_params_issues/screens/review_page.dart' as _i8;
 
-abstract class $RootRouter extends _i10.RootStackRouter {
+abstract class $RootRouter extends _i11.RootStackRouter {
   $RootRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i10.PageFactory> pagesMap = {
+  final Map<String, _i11.PageFactory> pagesMap = {
     BookDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<BookDetailsRouteArgs>();
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i1.BookDetailsPage(
           key: args.key,
@@ -36,57 +38,63 @@ abstract class $RootRouter extends _i10.RootStackRouter {
       );
     },
     BookListRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i2.BookListScreen(),
       );
     },
     BooksTab.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.BooksTabPage(),
       );
     },
     DashboardRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.DashboardPage(),
       );
     },
-    HomeRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+    DeclarativeRoute.name: (routeData) {
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.HomeScreen(),
+        child: const _i5.DeclarativeScreen(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return _i11.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i6.HomeScreen(),
       );
     },
     PostRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.PostPage(),
+        child: const _i7.PostPage(),
       );
     },
     ReviewRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args =
           routeData.argsAs<ReviewRouteArgs>(orElse: () => ReviewRouteArgs());
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.ReviewScreen(
+        child: _i8.ReviewScreen(
           key: args.key,
           id: pathParams.getInt('id'),
         ),
       );
     },
     SettingRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i8.SettingPage(),
+        child: const _i9.SettingPage(),
       );
     },
     UserRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.UserPage(),
+        child: const _i10.UserPage(),
       );
     },
   };
@@ -94,11 +102,11 @@ abstract class $RootRouter extends _i10.RootStackRouter {
 
 /// generated route for
 /// [_i1.BookDetailsPage]
-class BookDetailsRoute extends _i10.PageRouteInfo<BookDetailsRouteArgs> {
+class BookDetailsRoute extends _i11.PageRouteInfo<BookDetailsRouteArgs> {
   BookDetailsRoute({
-    _i11.Key? key,
+    _i12.Key? key,
     required int id,
-    List<_i10.PageRouteInfo>? children,
+    List<_i11.PageRouteInfo>? children,
   }) : super(
           BookDetailsRoute.name,
           args: BookDetailsRouteArgs(
@@ -110,8 +118,8 @@ class BookDetailsRoute extends _i10.PageRouteInfo<BookDetailsRouteArgs> {
 
   static const String name = 'BookDetailsRoute';
 
-  static const _i10.PageInfo<BookDetailsRouteArgs> page =
-      _i10.PageInfo<BookDetailsRouteArgs>(name);
+  static const _i11.PageInfo<BookDetailsRouteArgs> page =
+      _i11.PageInfo<BookDetailsRouteArgs>(name);
 }
 
 class BookDetailsRouteArgs {
@@ -120,7 +128,7 @@ class BookDetailsRouteArgs {
     required this.id,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   final int id;
 
@@ -132,8 +140,8 @@ class BookDetailsRouteArgs {
 
 /// generated route for
 /// [_i2.BookListScreen]
-class BookListRoute extends _i10.PageRouteInfo<void> {
-  const BookListRoute({List<_i10.PageRouteInfo>? children})
+class BookListRoute extends _i11.PageRouteInfo<void> {
+  const BookListRoute({List<_i11.PageRouteInfo>? children})
       : super(
           BookListRoute.name,
           initialChildren: children,
@@ -141,13 +149,13 @@ class BookListRoute extends _i10.PageRouteInfo<void> {
 
   static const String name = 'BookListRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.BooksTabPage]
-class BooksTab extends _i10.PageRouteInfo<void> {
-  const BooksTab({List<_i10.PageRouteInfo>? children})
+class BooksTab extends _i11.PageRouteInfo<void> {
+  const BooksTab({List<_i11.PageRouteInfo>? children})
       : super(
           BooksTab.name,
           initialChildren: children,
@@ -155,13 +163,13 @@ class BooksTab extends _i10.PageRouteInfo<void> {
 
   static const String name = 'BooksTab';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.DashboardPage]
-class DashboardRoute extends _i10.PageRouteInfo<void> {
-  const DashboardRoute({List<_i10.PageRouteInfo>? children})
+class DashboardRoute extends _i11.PageRouteInfo<void> {
+  const DashboardRoute({List<_i11.PageRouteInfo>? children})
       : super(
           DashboardRoute.name,
           initialChildren: children,
@@ -169,13 +177,27 @@ class DashboardRoute extends _i10.PageRouteInfo<void> {
 
   static const String name = 'DashboardRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.HomeScreen]
-class HomeRoute extends _i10.PageRouteInfo<void> {
-  const HomeRoute({List<_i10.PageRouteInfo>? children})
+/// [_i5.DeclarativeScreen]
+class DeclarativeRoute extends _i11.PageRouteInfo<void> {
+  const DeclarativeRoute({List<_i11.PageRouteInfo>? children})
+      : super(
+          DeclarativeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DeclarativeRoute';
+
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i6.HomeScreen]
+class HomeRoute extends _i11.PageRouteInfo<void> {
+  const HomeRoute({List<_i11.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -183,13 +205,13 @@ class HomeRoute extends _i10.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i6.PostPage]
-class PostRoute extends _i10.PageRouteInfo<void> {
-  const PostRoute({List<_i10.PageRouteInfo>? children})
+/// [_i7.PostPage]
+class PostRoute extends _i11.PageRouteInfo<void> {
+  const PostRoute({List<_i11.PageRouteInfo>? children})
       : super(
           PostRoute.name,
           initialChildren: children,
@@ -197,15 +219,15 @@ class PostRoute extends _i10.PageRouteInfo<void> {
 
   static const String name = 'PostRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i7.ReviewScreen]
-class ReviewRoute extends _i10.PageRouteInfo<ReviewRouteArgs> {
+/// [_i8.ReviewScreen]
+class ReviewRoute extends _i11.PageRouteInfo<ReviewRouteArgs> {
   ReviewRoute({
-    _i11.Key? key,
-    List<_i10.PageRouteInfo>? children,
+    _i12.Key? key,
+    List<_i11.PageRouteInfo>? children,
   }) : super(
           ReviewRoute.name,
           args: ReviewRouteArgs(key: key),
@@ -214,14 +236,14 @@ class ReviewRoute extends _i10.PageRouteInfo<ReviewRouteArgs> {
 
   static const String name = 'ReviewRoute';
 
-  static const _i10.PageInfo<ReviewRouteArgs> page =
-      _i10.PageInfo<ReviewRouteArgs>(name);
+  static const _i11.PageInfo<ReviewRouteArgs> page =
+      _i11.PageInfo<ReviewRouteArgs>(name);
 }
 
 class ReviewRouteArgs {
   const ReviewRouteArgs({this.key});
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   @override
   String toString() {
@@ -230,9 +252,9 @@ class ReviewRouteArgs {
 }
 
 /// generated route for
-/// [_i8.SettingPage]
-class SettingRoute extends _i10.PageRouteInfo<void> {
-  const SettingRoute({List<_i10.PageRouteInfo>? children})
+/// [_i9.SettingPage]
+class SettingRoute extends _i11.PageRouteInfo<void> {
+  const SettingRoute({List<_i11.PageRouteInfo>? children})
       : super(
           SettingRoute.name,
           initialChildren: children,
@@ -240,13 +262,13 @@ class SettingRoute extends _i10.PageRouteInfo<void> {
 
   static const String name = 'SettingRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i9.UserPage]
-class UserRoute extends _i10.PageRouteInfo<void> {
-  const UserRoute({List<_i10.PageRouteInfo>? children})
+/// [_i10.UserPage]
+class UserRoute extends _i11.PageRouteInfo<void> {
+  const UserRoute({List<_i11.PageRouteInfo>? children})
       : super(
           UserRoute.name,
           initialChildren: children,
@@ -254,5 +276,5 @@ class UserRoute extends _i10.PageRouteInfo<void> {
 
   static const String name = 'UserRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }

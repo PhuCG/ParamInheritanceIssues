@@ -17,6 +17,14 @@ class RootRouter extends $RootRouter {
       ],
     ),
     AutoRoute(
+      path: '/declarative',
+      page: DeclarativeRoute.page,
+      children: [
+        AutoRoute(path: '', page: BookListRoute.page),
+        AutoRoute(path: ':id', page: BookDetailsRoute.page),
+      ],
+    ),
+    AutoRoute(
       page: BooksTab.page,
       children: [
         RedirectRoute(path: '', redirectTo: 'books'),

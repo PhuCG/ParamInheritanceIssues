@@ -30,6 +30,13 @@ class HomeScreen extends StatelessWidget {
                 context.pushRoute(const DashboardRoute());
               },
             ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              child: const Text('Declarative'),
+              onPressed: () {
+                context.pushRoute(const DeclarativeRoute());
+              },
+            ),
           ],
         ),
       ),

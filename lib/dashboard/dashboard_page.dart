@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:inherited_params_issues/router.gr.dart';
 
 @RoutePage()
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
   @override
+  State<DashboardPage> createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage> {
+  @override
   Widget build(BuildContext context) {
+    var _id = 0;
     return Scaffold(
       appBar: AppBar(),
       body: Row(
@@ -29,9 +35,8 @@ class DashboardPage extends StatelessWidget {
             ],
           ),
           const Expanded(
-            // nested routes will be rendered here
             child: AutoRouter(),
-          )
+          ),
         ],
       ),
     );

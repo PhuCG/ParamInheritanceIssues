@@ -36,14 +36,6 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                 ],
               ),
             ),
-            const Expanded(
-              child: Column(
-                children: [
-                  Text('data'),
-                  AutoRouter(),
-                ],
-              ),
-            )
           ],
         ),
       ),
