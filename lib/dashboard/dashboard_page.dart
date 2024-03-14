@@ -13,7 +13,6 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
-    var _id = 0;
     return Scaffold(
       appBar: AppBar(),
       body: Row(

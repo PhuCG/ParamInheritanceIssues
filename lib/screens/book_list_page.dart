@@ -17,6 +17,7 @@ class _BookListScreenState extends State<BookListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Book '),
+        leading: const AutoLeadingButton(),
         centerTitle: true,
         titleTextStyle: Theme.of(context).textTheme.headlineLarge,
       ),

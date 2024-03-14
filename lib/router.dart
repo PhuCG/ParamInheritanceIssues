@@ -5,7 +5,23 @@ import 'package:inherited_params_issues/router.gr.dart';
 class RootRouter extends $RootRouter {
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(path: '/', page: HomeRoute.page),
+    AutoRoute(path: '/', page: HomestayRoute.page),
+    // Tab
+    AutoRoute(
+      page: TabRoute.page,
+      path: '/tab',
+      children: [
+        // RedirectRoute(path: '', redirectTo: 'users'),
+        AutoRoute(path: 'users', page: UserRoute.page),
+        AutoRoute(path: 'posts', page: PostRoute.page),
+        AutoRoute(path: 'settings', page: SettingRoute.page),
+      ],
+    ),
+
+    // Full Screen
+    AutoRoute(page: UserRoute.page),
+
+    // Nested Route
     AutoRoute(
       path: '/dashboard',
       page: DashboardRoute.page,
@@ -16,6 +32,8 @@ class RootRouter extends $RootRouter {
         AutoRoute(path: 'settings', page: SettingRoute.page),
       ],
     ),
+
+    // declarative
     AutoRoute(
       path: '/declarative',
       page: DeclarativeRoute.page,

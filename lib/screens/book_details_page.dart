@@ -16,6 +16,11 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: const AutoLeadingButton(),
+        centerTitle: true,
+        titleTextStyle: Theme.of(context).textTheme.headlineLarge,
+      ),
       body: Center(
         child: Column(
           children: [

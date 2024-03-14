@@ -3,20 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:inherited_params_issues/router.gr.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomestayScreen extends StatefulWidget {
+  const HomestayScreen({super.key});
 
+  @override
+  State<HomestayScreen> createState() => _HomestayScreenState();
+}
+
+class _HomestayScreenState extends State<HomestayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('HOME PAGE'),
+        leading: const AutoLeadingButton(),
         centerTitle: true,
         titleTextStyle: Theme.of(context).textTheme.headlineLarge,
       ),
       body: Center(
         child: Column(
           children: [
+            const SizedBox(height: 16),
             ElevatedButton(
               child: const Text('List Book'),
               onPressed: () {
@@ -35,6 +42,19 @@ class HomeScreen extends StatelessWidget {
               child: const Text('Declarative'),
               onPressed: () {
                 context.pushRoute(const DeclarativeRoute());
+              },
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              child: const Text('Tab Sceen'),
+              onPressed: () {
+                context.pushRoute(const TabRoute());
+              },
+            ),
+            ElevatedButton(
+              child: const Text('User Sceen One Page'),
+              onPressed: () {
+                context.pushRoute(const UserRoute());
               },
             ),
           ],

@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       ),
       theme: ThemeData.dark().copyWith(
         pageTransitionsTheme: const PageTransitionsTheme(builders: {
-          TargetPlatform.iOS: NoShadowCupertinoPageTransitionsBuilder(),
           TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
         }),
       ),
