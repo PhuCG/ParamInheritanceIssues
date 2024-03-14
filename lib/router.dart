@@ -5,7 +5,7 @@ import 'package:inherited_params_issues/router.gr.dart';
 class RootRouter extends $RootRouter {
   @override
   final List<AutoRoute> routes = [
-    // AutoRoute(path: '/', page: HomestayRoute.page),
+    AutoRoute(path: '/', page: HomestayRoute.page),
     // // Tab
     // AutoRoute(
     //   page: TabRoute.page,
@@ -45,6 +45,7 @@ class RootRouter extends $RootRouter {
     //     AutoRoute(path: 'settings', page: SettingRoute.page),
     //   ],
     // ),
+
     // AutoRoute(
     //   page: BooksTab.page,
     //   children: [
@@ -64,18 +65,31 @@ class RootRouter extends $RootRouter {
     //   title: (ctx, _) => 'Books list',
     // ),
 
-    // Right Screen
-    AutoRoute(path: '/', page: RightRoute.page),
-    AutoRoute(path: '/home', page: HomeRightRoute.page),
+    // // Right Screen
+    // AutoRoute(path: '/', page: RightRoute.page),
+    // AutoRoute(path: '/home', page: HomeRightRoute.page),
+    // AutoRoute(
+    //   path: '/dashboard',
+    //   page: DashboardRoute.page,
+    //   children: [
+    //     RedirectRoute(path: '', redirectTo: 'users'),
+    //     AutoRoute(path: 'users', page: UserRoute.page),
+    //     AutoRoute(path: 'posts', page: PostRoute.page),
+    //     AutoRoute(path: 'settings', page: SettingRoute.page),
+    //   ],
+    // ),
+
+    // DeepLink
+
     AutoRoute(
-      path: '/dashboard',
-      page: DashboardRoute.page,
-      children: [
-        RedirectRoute(path: '', redirectTo: 'users'),
-        AutoRoute(path: 'users', page: UserRoute.page),
-        AutoRoute(path: 'posts', page: PostRoute.page),
-        AutoRoute(path: 'settings', page: SettingRoute.page),
-      ],
+      path: '/book/:id/code',
+      page: BookDetailsRoute.page,
+      fullMatch: true,
+    ),
+    AutoRoute(
+      path: '/book/:id',
+      page: BookDetails2Route.page,
+      // fullMatch: true,
     ),
   ];
 }

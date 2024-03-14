@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:inherited_params_issues/router.gr.dart';
 
 @RoutePage()
-class BookDetailsPage extends StatefulWidget {
+class BookDetails2Page extends StatefulWidget {
   final int id;
 
-  const BookDetailsPage({super.key, @pathParam required this.id});
+  const BookDetails2Page({super.key, @pathParam required this.id});
 
   @override
-  State<BookDetailsPage> createState() => _BookDetailsPageState();
+  State<BookDetails2Page> createState() => _BookDetails2PageState();
 }
 
-class _BookDetailsPageState extends State<BookDetailsPage> {
+class _BookDetails2PageState extends State<BookDetails2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('id: ${widget.id}'),
+                  Text('2 id: ${widget.id}'),
                   Text('args: ${context.routeData.args}'),
                   TextButton(
                     onPressed: () {
