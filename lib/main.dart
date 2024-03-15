@@ -5,18 +5,55 @@ import 'package:flutter/material.dart';
 import 'package:inherited_params_issues/router.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class AuthProvider extends ChangeNotifier {
+  bool _isLoggedIn = false;
+
+  bool get isLoggedIn => _isLoggedIn;
+
+  void login() {
+    _isLoggedIn = true;
+    notifyListeners();
+    log('message $_isLoggedIn');
+  }
+
+  void logout() {
+    _isLoggedIn = false;
+    notifyListeners();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
   final _rootRouter = RootRouter();
+  late final authService = AuthProvider();
+
+  @override
+  void initState() {
+    super.initState();
+    authService.addListener(_onAuthChanged);
+  }
+
+  void _onAuthChanged() {
+    log('message');
+    if (mounted) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _rootRouter.config(
+        reevaluateListenable: authService,
         navigatorObservers: () => [MyObserver()],
       ),
       theme: ThemeData.dark().copyWith(

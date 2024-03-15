@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:inherited_params_issues/main.dart';
 import 'package:inherited_params_issues/router.gr.dart';
 
 @RoutePage()
@@ -62,6 +63,27 @@ class _HomestayScreenState extends State<HomestayScreen> {
               child: const Text('Go to Home Right Screen'),
               onPressed: () {
                 context.router.replaceAll([const RightTab()]);
+              },
+            ),
+            const Divider(),
+            Text('Au: ${AuthProvider().isLoggedIn}'),
+            const SizedBox(height: 8),
+            ElevatedButton(
+              child: const Text('Go To Guard Page'),
+              onPressed: () {
+                context.pushRoute(const BookListRoute());
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Login'),
+              onPressed: () {
+                AuthProvider().login();
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Logout'),
+              onPressed: () {
+                AuthProvider().logout();
               },
             ),
           ],

@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
+import 'package:inherited_params_issues/main.dart';
 import 'package:inherited_params_issues/router.gr.dart';
 
 @AutoRouterConfig()
@@ -46,15 +49,22 @@ class RootRouter extends $RootRouter {
     //   ],
     // ),
 
-    AutoRoute(path: '/books', page: BookListRoute.page),
+    // AutoRoute(path: '/books', page: BookListRoute.page),
+    // AutoRoute(
+    //   path: '/book/:id',
+    //   page: BookContainerRoute.page,
+    //   children: [
+    //     AutoRoute(path: 'detail', page: BookDetailsRoute.page, initial: true),
+    //     AutoRoute(path: 'review', page: ReviewRoute.page),
+    //   ],
+    //   title: (ctx, _) => 'Books list',
+    // ),
+
+    AutoRoute(path: '/login', page: LoginRoute.page),
     AutoRoute(
-      path: '/book/:id',
-      page: BookContainerRoute.page,
-      children: [
-        AutoRoute(path: 'detail', page: BookDetailsRoute.page, initial: true),
-        AutoRoute(path: 'review', page: ReviewRoute.page),
-      ],
-      title: (ctx, _) => 'Books list',
+      path: '/books',
+      page: BookListRoute.page,
+      guards: [AuthGuard()],
     ),
 
     // // Right Screen
@@ -88,4 +98,17 @@ class RootRouter extends $RootRouter {
 @RoutePage(name: 'RightTab')
 class RightTabPage extends AutoRouter {
   const RightTabPage({super.key});
+}
+
+class AuthGuard extends AutoRouteGuard {
+  @override
+  void onNavigation(NavigationResolver resolver, StackRouter router) {
+    if (AuthProvider().isLoggedIn) {
+      log(AuthProvider().isLoggedIn.toString());
+      resolver.next(true);
+    } else {
+      // resolver.next(false);
+      resolver.redirect(const LoginRoute());
+    }
+  }
 }
